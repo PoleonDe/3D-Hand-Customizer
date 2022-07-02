@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 14cf911ad51d6d54bab4519788d1e258
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 78659d95ad118924796f8f89626e22d4, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Visuals/Materials/Substance/SubstanceGenerationTest.sbsar

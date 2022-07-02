@@ -1,0 +1,947 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed5864476f84ce4b85454db09ca4eaa, type: 3}
+  m_Name: graph_0
+  m_EditorClassIdentifier: 
+  AssetPath: Assets/Visuals/Materials/Substance/SpeklePlastic_02.sbsar
+  OutputPath: Assets\Visuals\Materials\Substance\SpeklePlastic_02_graph_0
+  RawData: {fileID: -244192453324840774, guid: ca0012d1e97840a448b3b868cb120cb1, type: 3}
+  Name: graph_0
+  IsRoot: 1
+  FlagedForDelete: 0
+  GUID: f2c32174-de13-4b90-b9d8-ae6ac7c04707
+  Index: 0
+  Input:
+  - rid: 1000
+  - rid: 1001
+  - rid: 1002
+  - rid: 1003
+  - rid: 1004
+  - rid: 1005
+  - rid: 1006
+  - rid: 1007
+  - rid: 1008
+  - rid: 1009
+  - rid: 1010
+  - rid: 1011
+  - rid: 1012
+  - rid: 1013
+  - rid: 1014
+  - rid: 1015
+  - rid: 1016
+  - rid: 1017
+  - rid: 1018
+  - rid: 1019
+  - rid: 1020
+  - rid: 1021
+  - rid: 1022
+  - rid: 1023
+  - rid: 1024
+  - rid: 1025
+  - rid: 1026
+  - rid: 1027
+  - rid: 1028
+  - rid: 1029
+  - rid: 1030
+  - rid: 1031
+  - rid: 1032
+  Output:
+  - Index: 0
+    VirtualOutputIndex: 5
+    GraphIndex: 0
+    Description:
+      Identifier: basecolor
+      Label: basecolor
+      Index: 0
+      Type: 8
+      Channel: baseColor
+    OutputTexture: {fileID: 2800000, guid: 0c3ebce75456d7649869f48005a86b28, type: 3}
+    sRGB: 1
+    IsVirtual: 0
+    IsStandardOutput: 1
+    IsAlphaAssignable: 1
+    AlphaChannel: roughness
+    InvertAssignedAlpha: 1
+    Flags: 0
+  - Index: 1
+    VirtualOutputIndex: 6
+    GraphIndex: 0
+    Description:
+      Identifier: normal
+      Label: normal
+      Index: 1
+      Type: 8
+      Channel: normal
+    OutputTexture: {fileID: 2800000, guid: 5b6fac021a9749c4f845cab6f9c9e4ea, type: 3}
+    sRGB: 0
+    IsVirtual: 0
+    IsStandardOutput: 1
+    IsAlphaAssignable: 0
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+  - Index: 2
+    VirtualOutputIndex: 7
+    GraphIndex: 0
+    Description:
+      Identifier: roughness
+      Label: roughness
+      Index: 2
+      Type: 8
+      Channel: roughness
+    OutputTexture: {fileID: 2800000, guid: bc19ca92b9a4dc7459d49ab6eccfd795, type: 3}
+    sRGB: 0
+    IsVirtual: 0
+    IsStandardOutput: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+  - Index: 3
+    VirtualOutputIndex: 8
+    GraphIndex: 0
+    Description:
+      Identifier: height
+      Label: height
+      Index: 3
+      Type: 8
+      Channel: height
+    OutputTexture: {fileID: 2800000, guid: ffeaee2d486e5ff45a9862ebac5599ff, type: 3}
+    sRGB: 1
+    IsVirtual: 0
+    IsStandardOutput: 1
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+  - Index: 4
+    VirtualOutputIndex: 9
+    GraphIndex: 0
+    Description:
+      Identifier: ambientocclusion
+      Label: ambientocclusion
+      Index: 4
+      Type: 8
+      Channel: ambientOcclusion
+    OutputTexture: {fileID: 2800000, guid: bd11b918d31c42742ada01a56b34603b, type: 3}
+    sRGB: 0
+    IsVirtual: 0
+    IsStandardOutput: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+  Thumbnail: 
+  HasThumbnail: 0
+  CurrentStatePreset: " <sbspreset pkgurl=\"pkg://SpeklePlastic\" label=\"\" >\n 
+    <presetinput identifier=\"$outputsize\" uid=\"2616793921\" type=\"8\" value=\"11,11\"
+    />\n  <presetinput identifier=\"normalIntensity\" uid=\"4101742877\" type=\"0\"
+    value=\"0.779\" />\n </sbspreset>\n"
+  IsRuntimeOnly: 0
+  GenerateAllOutputs: 1
+  GenerateAllMipmaps: 0
+  OutputMaterial: {fileID: 2100000, guid: 6e338730d3c28ad46bea668a99a9463e, type: 2}
+  DefaultPreset: " <sbspreset pkgurl=\"pkg://SpeklePlastic\" label=\"\" >\n  <presetinput
+    identifier=\"$outputsize\" uid=\"2616793921\" type=\"8\" value=\"10,10\" />\n</sbspreset>\n"
+  MaterialShader: Universal Render Pipeline/Lit
+  RenderTextures: 0
+  OutputRemaped: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
+      type: {class: SubstanceInputInt2, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 0
+        GraphID: 0
+        Description:
+          Identifier: $outputsize
+          Label: $outputsize
+          GuiGroup: 
+          GuiDescription: 
+          Type: 5
+          WidgetType: 0
+        Data: {x: 11, y: 11}
+        NumericalDescription:
+          DefaultValue: {x: 8, y: 8}
+          MinValue: {x: 0, y: 0}
+          MaxValue: {x: 1, y: 1}
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1001
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 1
+        GraphID: 0
+        Description:
+          Identifier: $randomseed
+          Label: $randomseed
+          GuiGroup: 
+          GuiDescription: 
+          Type: 4
+          WidgetType: 0
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1002
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 2
+        GraphID: 0
+        Description:
+          Identifier: normalIntensity
+          Label: Normal Intensity
+          GuiGroup: 
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.779
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 3
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1003
+      type: {class: SubstanceInputFloat4, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 3
+        GraphID: 0
+        Description:
+          Identifier: baseColor
+          Label: Base Color
+          GuiGroup: Base Color
+          GuiDescription: 
+          Type: 3
+          WidgetType: 3
+        Data: {x: 0, y: 0, z: 0, w: 1}
+        NumericalDescription:
+          DefaultValue: {x: 0, y: 0, z: 0, w: 1}
+          MinValue: {x: 0, y: 0, z: 0, w: 0}
+          MaxValue: {x: 0, y: 0, z: 0, w: 0}
+          SliderStep: 0
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1004
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 4
+        GraphID: 0
+        Description:
+          Identifier: valueRange
+          Label: Value Range
+          GuiGroup: Base Color
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.05
+        NumericalDescription:
+          DefaultValue: 0.05
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.001
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1005
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 5
+        GraphID: 0
+        Description:
+          Identifier: hueVariationIntensity
+          Label: Hue Variation Intensity
+          GuiGroup: Base Color
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.1
+        NumericalDescription:
+          DefaultValue: 0.1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.001
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1006
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 6
+        GraphID: 0
+        Description:
+          Identifier: hueVariationSeed
+          Label: Hue Variation Seed
+          GuiGroup: Base Color
+          GuiDescription: 
+          Type: 4
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 9999
+          SliderStep: 1
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1007
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 7
+        GraphID: 0
+        Description:
+          Identifier: spekleVisibility
+          Label: Spekle Visibility
+          GuiGroup: Spekles
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1008
+      type: {class: SubstanceInputFloat4, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 8
+        GraphID: 0
+        Description:
+          Identifier: spekleColor
+          Label: Spekle Color
+          GuiGroup: Spekles
+          GuiDescription: 
+          Type: 3
+          WidgetType: 3
+        Data: {x: 0.26, y: 0.26, z: 0.26, w: 1}
+        NumericalDescription:
+          DefaultValue: {x: 0.26, y: 0.26, z: 0.26, w: 1}
+          MinValue: {x: 0, y: 0, z: 0, w: 0}
+          MaxValue: {x: 0, y: 0, z: 0, w: 0}
+          SliderStep: 0
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1009
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 9
+        GraphID: 0
+        Description:
+          Identifier: spekleSize
+          Label: Spekle Size
+          GuiGroup: Spekles
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1010
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 10
+        GraphID: 0
+        Description:
+          Identifier: spekleAmount
+          Label: Spekle Amount
+          GuiGroup: Spekles
+          GuiDescription: 
+          Type: 4
+          WidgetType: 1
+        Data: 64
+        NumericalDescription:
+          DefaultValue: 64
+          MinValue: 0
+          MaxValue: 256
+          SliderStep: 1
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1011
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 11
+        GraphID: 0
+        Description:
+          Identifier: spekleUniformAmount
+          Label: Spekle Uniform Amount
+          GuiGroup: Spekles
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1012
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 12
+        GraphID: 0
+        Description:
+          Identifier: spekleUniformPosition
+          Label: Spekle Uniform Position
+          GuiGroup: Spekles
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1013
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 13
+        GraphID: 0
+        Description:
+          Identifier: spekleUniformSize
+          Label: Spekle Uniform Size
+          GuiGroup: Spekles
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1014
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 14
+        GraphID: 0
+        Description:
+          Identifier: spekleUniformBrightness
+          Label: Spekle Uniform Brightness
+          GuiGroup: Spekles
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1015
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 15
+        GraphID: 0
+        Description:
+          Identifier: spekleSmearingAmount
+          Label: Spekle Smearing Amount
+          GuiGroup: Spekles
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1016
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 16
+        GraphID: 0
+        Description:
+          Identifier: spekleSmearingSize
+          Label: Spekle Smearing Size
+          GuiGroup: Spekles
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1017
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 17
+        GraphID: 0
+        Description:
+          Identifier: spekleBleeding
+          Label: Spekle Bleeding
+          GuiGroup: Spekles
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1018
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 18
+        GraphID: 0
+        Description:
+          Identifier: roughness
+          Label: Roughness
+          GuiGroup: Roughness
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.5
+        NumericalDescription:
+          DefaultValue: 0.5
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1019
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 19
+        GraphID: 0
+        Description:
+          Identifier: roughnessRange
+          Label: Roughness Range
+          GuiGroup: Roughness
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.25
+        NumericalDescription:
+          DefaultValue: 0.25
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1020
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 20
+        GraphID: 0
+        Description:
+          Identifier: advancedSettings
+          Label: Advanced Settings
+          GuiGroup: Structure
+          GuiDescription: Enables Ping Pong and Structure Warp
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1021
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 21
+        GraphID: 0
+        Description:
+          Identifier: invert
+          Label: Invert
+          GuiGroup: Structure
+          GuiDescription: Flips the greyscale values, so up gets down and down gets
+            up
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1022
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 22
+        GraphID: 0
+        Description:
+          Identifier: microStructureType
+          Label: Micro Structure Type
+          GuiGroup: Structure
+          GuiDescription: The Base Microstructuretype that is used to generate the
+            bumpyness
+          Type: 4
+          WidgetType: 5
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 12
+          EnumValues:
+          - Value: 1
+            Label: Regular Soft Grain
+          - Value: 2
+            Label: Spotty Grain
+          - Value: 3
+            Label: Spotty Hard Grain
+          - Value: 4
+            Label: Bulpy Soft Grain
+          - Value: 5
+            Label: Foldy Soft Grain
+          - Value: 6
+            Label: Tiny Regular Structure
+          - Value: 7
+            Label: Spotty Hilly Hard Grain
+          - Value: 8
+            Label: Spotty Hilly Soft Grain
+          - Value: 9
+            Label: 'Streaky Stripes Hard '
+          - Value: 10
+            Label: Regular Hard Scrappy Grain (Slow To Compute)
+          - Value: 11
+            Label: Tiny Regular High Density Grid Grain (Moire Effect can be Useful)
+          - Value: 12
+            Label: Scratchy Hard Grain
+    - rid: 1023
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 23
+        GraphID: 0
+        Description:
+          Identifier: microStructureIntensity
+          Label: Micro Structure Intensity
+          GuiGroup: Structure
+          GuiDescription: The intensity in which the micro structure is applied.
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1024
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 24
+        GraphID: 0
+        Description:
+          Identifier: softness
+          Label: Softness
+          GuiGroup: Structure
+          GuiDescription: 'The Softness of the Texture (high values blur the texture,
+            so fine details get lost)
+
+            Can be used to fight Artifacts.
+
+'
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1025
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 25
+        GraphID: 0
+        Description:
+          Identifier: structureTiling
+          Label: Structure Tiling
+          GuiGroup: Structure
+          GuiDescription: 'Determines the Scaling of the Noise.
+
+            Can
+            go above/below bounds.'
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 1
+          MaxValue: 5
+          SliderStep: 0.001
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1026
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 26
+        GraphID: 0
+        Description:
+          Identifier: usePingPongShift
+          Label: Use Ping Pong Shift
+          GuiGroup: Structure/Ping Pong
+          GuiDescription: 'Special Method to generate Variation in the Texture.
+
+            Sometimes
+            generates Spottyness.'
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1027
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 27
+        GraphID: 0
+        Description:
+          Identifier: pingPongShift
+          Label: Ping Pong Shift
+          GuiGroup: Structure/Ping Pong
+          GuiDescription: 'The Degree of Shifting, use this to cycle through different
+            Variants.
+
+            0/360 Degrees wont resolve in the initial greyscale
+            value without ping pong.
+
+'
+          Type: 0
+          WidgetType: 2
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1028
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 28
+        GraphID: 0
+        Description:
+          Identifier: useStructureWarp
+          Label: Use Structure Warp
+          GuiGroup: Structure/StructureWarp
+          GuiDescription: Applies a Warping Effect on the base Microstructure noise,
+            and takes as an input the structurewarp Noise (StructureWarpType).
+          Type: 4
+          WidgetType: 4
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1029
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 29
+        GraphID: 0
+        Description:
+          Identifier: structureWarpType
+          Label: Structure Warp Type
+          GuiGroup: Structure/StructureWarp
+          GuiDescription: The Warp Microstructuretype that is used to generate the
+            warping of the Base Microstructuretype.
+          Type: 4
+          WidgetType: 5
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 12
+          EnumValues:
+          - Value: 1
+            Label: Regular Soft Grain
+          - Value: 2
+            Label: Spotty Grain
+          - Value: 3
+            Label: Spotty Hard Grain
+          - Value: 4
+            Label: Bulpy Soft Grain
+          - Value: 5
+            Label: Foldy Soft Grain
+          - Value: 6
+            Label: Tiny Regular Structure
+          - Value: 7
+            Label: Spotty Hilly Hard Grain
+          - Value: 8
+            Label: Spotty Hilly Soft Grain
+          - Value: 9
+            Label: 'Streaky Stripes Hard '
+          - Value: 10
+            Label: Regular Hard Scrappy Grain (Slow To Compute)
+          - Value: 11
+            Label: Tiny Regular High Density Grid Grain (Moire Effect can be Useful)
+          - Value: 12
+            Label: Scratchy Hard Grain
+    - rid: 1030
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 30
+        GraphID: 0
+        Description:
+          Identifier: structureWarpIntensity
+          Label: Structure Warp Intensity
+          GuiGroup: Structure/StructureWarp
+          GuiDescription: the intensity in which the warping effect is applied
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 2.5
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1031
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 31
+        GraphID: 0
+        Description:
+          Identifier: structureWarpTiling
+          Label: Structure Warp Tiling
+          GuiGroup: Structure/StructureWarp
+          GuiDescription: 'Tiling of the Warping Microstructure in Percent %
+
+            1
+            = stays the same
+
+            0 to 1 = shrinkens
+
+            1 to 5
+            = enlargens'
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0.5
+          MaxValue: 5
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1032
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 32
+        GraphID: 0
+        Description:
+          Identifier: ambientOcclusionHeight
+          Label: Ambient Occlusion Height
+          GuiGroup: Ambient Occlusion
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 3
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
