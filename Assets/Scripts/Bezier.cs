@@ -108,4 +108,22 @@ public class CubicBezierCurve
 		// The (tail) recursive call.
 		return GetClosestParamRec(pos, beginT, endT, thresholdT);
 	}
+
+	/// <summary>
+	/// Divides the curve into (_iterations) line segments and returns their summed length
+	/// </summary>
+	/// <param name="_segments"> Amount of Segments</param>
+	/// <returns></returns>
+	public float GetLength(int _segments = 100)
+	{
+		float length = 0f; // init length
+		float step = 1f / (float)_segments; // calculate the steplength
+
+		for (float t = 0; t < 1f - step; t += step) // go trough the bezier curve step by step
+        {
+			length += Vector3.Distance(GetPoint(t), GetPoint(t + step)); // add the length of the current line segment to the length
+		}
+
+		return length;
+	}
 }
