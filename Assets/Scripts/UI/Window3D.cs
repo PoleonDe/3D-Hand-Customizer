@@ -49,8 +49,18 @@ public class Window3D : ViewQuad
     public override Vector2[] CalculateAnchors()
     {
         Vector2 A1 = new Vector2((-UIManager.Instance.Canvas.pixelRect.width / 2f) + UIManager.Instance.PanelTool.WidthPixel, UIManager.Instance.Canvas.pixelRect.height / 2f);
-        Vector2 A2 = new Vector2((UIManager.Instance.Canvas.pixelRect.width / 2f) - UIManager.Instance.PanelProperty.WidthPixel, -UIManager.Instance.Canvas.pixelRect.height / 2f);
 
+        Vector2 A2;
+        if (UIManager.Instance.IsWindow2D)
+        { // set Anchor bound to View Splitter
+            Vector2 viewSplitterScreenPoint = GameController.Instance.CameraUI.WorldToScreenPoint(UIManager.Instance.ViewSplitter.transform.position); //MISSING : + (Vector3.left * UIManager.Instance.ViewSplitter.WidthPixel)
+            A2 = new Vector2(viewSplitterScreenPoint.x - (UIManager.Instance.Canvas.pixelRect.width /2f), -UIManager.Instance.Canvas.pixelRect.height / 2f); // offset by half the screen, because anchor is not in bottom left, but in middle
+        }
+        else
+        { // set Anchor bound to PropertyPanel
+            A2 = new Vector2((UIManager.Instance.Canvas.pixelRect.width / 2f) - UIManager.Instance.PanelProperty.WidthPixel, -UIManager.Instance.Canvas.pixelRect.height / 2f);
+        }
+        
         return new Vector2[] {A1,A2};
     }
 

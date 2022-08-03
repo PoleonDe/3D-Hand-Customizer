@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 
 public class UIManager : SingletonObject<UIManager>
 {
     const string S = "Settings";
     const string REF = "References";
     const string IN = "Internal";
+
+    [TitleGroup(S)] public bool NeedsRepaint = false;
 
 
     [TitleGroup(IN)] public RaycastHit rayHit;
@@ -21,10 +24,14 @@ public class UIManager : SingletonObject<UIManager>
 
 
 
-    [TitleGroup(IN)] [ShowInInspector] private bool isWindow2D;
-    [TitleGroup(IN)] [ShowInInspector] private bool isWindow3D;
-    [TitleGroup(IN)] [ShowInInspector] private bool isPanelProperty;
-    [TitleGroup(IN)] [ShowInInspector] private bool isPanelTool;
+    [TitleGroup(IN)] public bool IsWindow2D { get => isWindow2D; }
+    [TitleGroup(IN)] [OdinSerialize] private bool isWindow2D;
+    [TitleGroup(IN)] public bool IsWindow3D { get => isWindow3D; }
+    [TitleGroup(IN)] [OdinSerialize] private bool isWindow3D;
+    [TitleGroup(IN)] public bool IsPanelProperty { get => isPanelProperty; }
+    [TitleGroup(IN)] [OdinSerialize] private bool isPanelProperty;
+    [TitleGroup(IN)] public bool IsPanelTool { get => isPanelTool; }
+    [TitleGroup(IN)] [OdinSerialize] private bool isPanelTool;
 
     [TitleGroup(IN)] int lastScreenWidth = 0;
     [TitleGroup(IN)] int lastScreenHeight = 0;
@@ -38,6 +45,8 @@ public class UIManager : SingletonObject<UIManager>
     [TitleGroup(REF)] Window2D window2D;
     [TitleGroup(REF)] [ShowInInspector] public Window3D Window3D {get => window3D;}
     [TitleGroup(REF)] Window3D window3D;
+    [TitleGroup(REF)] [ShowInInspector] public ViewSplitter ViewSplitter { get => viewSplitter; }
+    [TitleGroup(REF)] ViewSplitter viewSplitter;
     [TitleGroup(REF)] [ShowInInspector]public Canvas Canvas {get => canvas;}
     [TitleGroup(REF)] Canvas canvas;
 
@@ -52,9 +61,10 @@ public class UIManager : SingletonObject<UIManager>
         panelTool = GameObject.FindObjectOfType<PanelTool>();
         window2D = GameObject.FindObjectOfType<Window2D>();
         window3D = GameObject.FindObjectOfType<Window3D>();
+        viewSplitter = GameObject.FindObjectOfType<ViewSplitter>();
         canvas = GameObject.FindObjectOfType<Canvas>();
 
-        if (panelProperty == null || panelTool == null || window2D == null || window3D == null || canvas == null)
+        if (panelProperty == null || panelTool == null || window2D == null || window3D == null || canvas == null || viewSplitter == null)
         {
             Debug.LogError("UI manager couldnt find all required References");
         }
@@ -79,15 +89,28 @@ public class UIManager : SingletonObject<UIManager>
 
         if (lastScreenWidth != Screen.width || lastScreenHeight != Screen.height) // if screenSizeChanged do this:
         {
-            window3D.UpdateViewQuad();
-            panelTool.UpdateSize();
-            panelProperty.UpdateSize();
+            NeedsRepaint = true;
             lastScreenWidth = Screen.width;
             lastScreenHeight = Screen.height;
+        }
+
+        if (NeedsRepaint)
+        {
+            Repaint();
         }
     }
     private void LateUpdate()
     {
         previousMousePos = Input.mousePosition;
+    }
+
+    public void Repaint()
+    {
+        window3D.UpdateViewQuad();
+        viewSplitter.UpdateViewQuad();
+        panelTool.UpdateSize();
+        panelProperty.UpdateSize();
+
+        NeedsRepaint = false;
     }
 }

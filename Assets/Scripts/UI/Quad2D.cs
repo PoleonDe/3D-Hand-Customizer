@@ -29,6 +29,11 @@ public Quad2D(Vector2 _topLeft, Vector2 _bottomRight)
             Debug.LogWarning("One Dimension of Quad is 0");
         }
 
+        if (!IsValid)
+        {
+            Debug.LogWarning("Initialized a non Valid quad.");
+        }
+
         //create Mesh
         mesh2D = new Mesh();
         mesh2D.name = "QuadMesh";
@@ -101,6 +106,12 @@ public Quad2D(Vector2 _topLeft, Vector2 _bottomRight)
         //assign the class variables
         topLeft = _topLeft.Vec3();
         bottomRight = _bottomRight.Vec3();
+
+        if (!IsValid)
+        {
+            Debug.LogWarning("The Quad isnt Valid, stopped Updating");
+            return;
+        }
 
         mesh2D.vertices = CalculatePositions();
         mesh2D.uv = CalculateUVs(UseAspectRatio);
