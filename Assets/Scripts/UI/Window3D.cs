@@ -3,37 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEngine.SceneManagement;
-public class Window3D : MonoBehaviour
+public class Window3D : ViewQuad
 {
     const string S = "Settings";
     const string REF = "References";
     const string IN = "Internal";
 
-    [TitleGroup(S)] [ShowInInspector] public Vector2 TL;
-    [TitleGroup(S)] [ShowInInspector] public Vector2 BR;
+    [TitleGroup(REF)] [ShowInInspector] Navigation navigation;
 
-
-    [TitleGroup(IN)] [ShowInInspector] Quad2D quad;
-
-    [TitleGroup(REF)] [ShowInInspector] Navigation3D navigation3D;
-    [TitleGroup(REF)] [ShowInInspector] MeshFilter meshFilter;
-    [TitleGroup(REF)] [ShowInInspector] MeshCollider meshCollider;
-
-    [TitleGroup(REF)] [ShowInInspector] Canvas canvas;
-
-
-
-    private void Start()
+    new void Start()
     {
-        navigation3D = GameController.Instance.Camera3D.GetComponent<Navigation3D>();
-        meshCollider = this.gameObject.GetComponent<MeshCollider>();
-        meshFilter = this.gameObject.GetComponent<MeshFilter>();
-        canvas = GameObject.FindObjectOfType<Canvas>();
-
-        quad = new Quad2D(new Vector2(-canvas.pixelRect.width / 2f, canvas.pixelRect.height / 2f), new Vector2(canvas.pixelRect.width / 2f, -canvas.pixelRect.height / 2f));
-        UpdateViewQuad();
-
+        base.Start();
+        navigation = GameController.Instance.Camera3D.GetComponent<Navigation>();
+        Debug.Log("window3Dstart");
     }
+       
 
     void Update()
     {
@@ -42,19 +26,19 @@ public class Window3D : MonoBehaviour
             if (UIManager.Instance.rayHit.collider.gameObject == this.gameObject)
             {
                 //Debug.Log(UIManager.Instance.rayHit.textureCoord);
-                navigation3D.PropagateRaycast(UIManager.Instance.rayHit.textureCoord);
+                navigation.PropagateRaycast(UIManager.Instance.rayHit.textureCoord);
 
                 if (Input.GetMouseButton(0))
                 {
-                    navigation3D.RotateCamera(UIManager.Instance.MouseDelta);
+                    navigation.RotateCamera(UIManager.Instance.MouseDelta);
                 }
                 if (Input.GetMouseButton(1))
                 {
-                    navigation3D.ZoomCamera(UIManager.Instance.MouseDelta);
+                    navigation.ZoomCamera(UIManager.Instance.MouseDelta);
                 }
                 if (Input.GetMouseButton(2))
                 {
-                    navigation3D.PanCamera(UIManager.Instance.MouseDelta);
+                    navigation.PanCamera(UIManager.Instance.MouseDelta);
                 }
 
                 Debug.DrawRay(UIManager.Instance.rayHit.point, Vector3.up * 0.1f);
@@ -62,29 +46,19 @@ public class Window3D : MonoBehaviour
         }
     }
 
-    [Button]
-    public void DebugQuad()
+    public override Vector2[] CalculateAnchors()
     {
-        quad.DebugLogQuad();
+        Vector2 A1 = new Vector2((-UIManager.Instance.Canvas.pixelRect.width / 2f) + UIManager.Instance.PanelTool.WidthPixel, UIManager.Instance.Canvas.pixelRect.height / 2f);
+        Vector2 A2 = new Vector2((UIManager.Instance.Canvas.pixelRect.width / 2f) - UIManager.Instance.PanelProperty.WidthPixel, -UIManager.Instance.Canvas.pixelRect.height / 2f);
+
+        return new Vector2[] {A1,A2};
     }
-    public void UpdateViewQuad()
+
+    public override void UpdateViewQuadDependencies()
     {
-        if (meshFilter == null || meshCollider == null)
-        {
-            Debug.LogWarning("tried to Update view quad, but MeshFilter or MeshCollider are null");
-            Debug.LogWarning("MeshFilter = " + meshFilter + "  MeshCollider = " + meshCollider);
-            return;
+        if (quad.IsValid)
+        { 
+            GameController.Instance.Camera3D.rect = new Rect(0, 0, quad.AspectRatio.x, quad.AspectRatio.y);
         }
-
-        //quad.UpdatePositions(new Vector2(-canvas.pixelRect.width / 2f, canvas.pixelRect.height / 2f), new Vector2(canvas.pixelRect.width / 2f, -canvas.pixelRect.height / 2f), true);
-        
-
-        quad.UpdatePositions(new Vector2((-canvas.pixelRect.width / 2f) + UIManager.Instance.panelTool.Width, canvas.pixelRect.height / 2f), new Vector2 ((canvas.pixelRect.width / 2f) - UIManager.Instance.panelProperty.Width, -canvas.pixelRect.height / 2f), true);
-        GameController.Instance.Camera3D.rect = new Rect(0, 0, quad.AspectRatio.x, quad.AspectRatio.y);
-
-        meshCollider.sharedMesh = quad.Mesh2D;
-        meshFilter.mesh = quad.Mesh2D;
-
-        Debug.Log("Updated Quad");
     }
 }

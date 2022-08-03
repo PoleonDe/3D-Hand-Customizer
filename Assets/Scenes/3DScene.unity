@@ -369,13 +369,16 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  cameraOrigin: {fileID: 0}
+  canOrbit: 1
+  canPan: 1
+  canZoom: 0
   raycastMask:
     serializedVersion: 2
     m_Bits: 1
   panSpeed: 1
   rotationSpeed: 15
   zoomSpeed: 1
+  cameraOrigin: {fileID: 0}
 --- !u!1 &1095879746
 GameObject:
   m_ObjectHideFlags: 0

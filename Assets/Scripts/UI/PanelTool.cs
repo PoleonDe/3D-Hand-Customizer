@@ -5,12 +5,12 @@ using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 public class PanelTool : SerializedMonoBehaviour
 {
-    [OdinSerialize] private float width = 50;
-    public float Width { get => width; }
-
+    [OdinSerialize] private float widthPercent = 8;
+    public float WidthPercent { get => widthPercent; }
+    public float WidthPixel { get => UIManager.Instance.Canvas.pixelRect.width * (widthPercent / 100f); }
     private void Start()
     {
-        UpdateStats();
+        UpdateSize();
     }
 
     [Button]
@@ -21,10 +21,11 @@ public class PanelTool : SerializedMonoBehaviour
     }
 
     [Button]
-    public void UpdateStats()
+    public void UpdateSize()
     {
         RectTransform rectTrans = this.gameObject.GetComponent<RectTransform>();
-        rectTrans.sizeDelta = new Vector2(width, 0f);
+        rectTrans.sizeDelta = new Vector2(WidthPixel, 0f);
+        Debug.Log("Updated PanelTool Size");
     }
 
 }

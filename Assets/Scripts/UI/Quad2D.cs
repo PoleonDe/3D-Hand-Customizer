@@ -15,6 +15,8 @@ public class Quad2D
     Vector3 bottomRight; // Bottom Right
     public Vector3 BottomRight { get => bottomRight; }
 
+    public bool IsValid { get => Width > 0f && Height > 0f; }
+
 
 public Quad2D(Vector2 _topLeft, Vector2 _bottomRight)
     {

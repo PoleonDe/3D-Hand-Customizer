@@ -10,6 +10,7 @@ public class GameController : SingletonScriptableObject<GameController>
     private void Awake()
     {
         Debug.Log("Awoken");
+        FindReferences();
     }
     void OnEnable()
     {
@@ -25,6 +26,11 @@ public class GameController : SingletonScriptableObject<GameController>
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        FindReferences();
+    }
+
+    void FindReferences()
+    {
         GameObject gO;
 
         gO = GameObject.FindGameObjectWithTag("3DCamera");
@@ -37,7 +43,6 @@ public class GameController : SingletonScriptableObject<GameController>
         {
             CameraUI = gO.GetComponent<Camera>();
         }
-        
     }
 
 }

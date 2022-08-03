@@ -4,21 +4,29 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-public class Navigation3D : SerializedMonoBehaviour
+public class Navigation : SerializedMonoBehaviour
 {
-    public GameObject cameraOrigin;
-    [SerializeField]
-    public LayerMask raycastMask;
+    const string S = "Settings";
+    const string IN = "Internal";
+    const string REF = "References";
 
-    public float panSpeed = 0.1f;
+    [TitleGroup(S)] public bool canOrbit = true;
+    [TitleGroup(S)] public bool canPan = true;
+    [TitleGroup(S)] public bool canZoom = true;
+
+    [TitleGroup(S)] [SerializeField] public LayerMask raycastMask;
+
+    [TitleGroup(S)] public float panSpeed = 0.1f;
     private float PanSpeed { get => panSpeed / 100f; set => panSpeed = value * 100f; }
 
-    public float rotationSpeed = 0.1f;
+    [TitleGroup(S)] public float rotationSpeed = 0.1f;
     private float RotationSpeed { get => rotationSpeed / 100f; set => rotationSpeed = value * 100f; }
 
-    public float zoomSpeed = 0.1f;
+    [TitleGroup(S)] public float zoomSpeed = 0.1f;
     private float ZoomSpeed { get => zoomSpeed / 100f; set => zoomSpeed = value * 100f; }
 
+
+    [TitleGroup(IN)] public GameObject cameraOrigin;
 
     private void Start()
     {
@@ -49,15 +57,23 @@ public class Navigation3D : SerializedMonoBehaviour
 
     public void PanCamera(Vector2 _delta)
     {
-        cameraOrigin.transform.Translate(new Vector3(_delta.x * PanSpeed, _delta.y * PanSpeed * Vector3.Distance(cameraOrigin.transform.position, this.transform.position), 0f), Space.Self);
+        if (canPan)
+        {
+            cameraOrigin.transform.Translate(new Vector3(_delta.x * PanSpeed, _delta.y * PanSpeed * Vector3.Distance(cameraOrigin.transform.position, this.transform.position), 0f), Space.Self);
+        }
     }
     public void RotateCamera(Vector2 _delta)
     {
-        cameraOrigin.transform.RotateAround(cameraOrigin.transform.position, cameraOrigin.transform.right, -_delta.y * RotationSpeed);
-        cameraOrigin.transform.RotateAround(cameraOrigin.transform.position, Vector3.up, _delta.x * RotationSpeed);
+        if (canOrbit)
+        { 
+            cameraOrigin.transform.RotateAround(cameraOrigin.transform.position, cameraOrigin.transform.right, -_delta.y * RotationSpeed);
+            cameraOrigin.transform.RotateAround(cameraOrigin.transform.position, Vector3.up, _delta.x * RotationSpeed);
+        }
     }
     public void ZoomCamera(Vector2 _delta)
     {
-
+        if (canZoom)
+        {
+        }
     }
 }

@@ -30,12 +30,18 @@ public class UIManager : SingletonObject<UIManager>
     [TitleGroup(IN)] int lastScreenHeight = 0;
 
 
-    [TitleGroup(REF)] public PanelProperty panelProperty;
-    [TitleGroup(REF)] public PanelTool panelTool;
-    [TitleGroup(REF)] public Window2D window2D;
-    [TitleGroup(REF)] public Window3D window3D;
+    [TitleGroup(REF)] [ShowInInspector] public PanelProperty PanelProperty {get => panelProperty;}
+    [TitleGroup(REF)] PanelProperty panelProperty;
+    [TitleGroup(REF)] [ShowInInspector]public PanelTool PanelTool {get => panelTool;}
+    [TitleGroup(REF)] PanelTool panelTool;
+    [TitleGroup(REF)] [ShowInInspector] public Window2D Window2D {get => window2D;}
+    [TitleGroup(REF)] Window2D window2D;
+    [TitleGroup(REF)] [ShowInInspector] public Window3D Window3D {get => window3D;}
+    [TitleGroup(REF)] Window3D window3D;
+    [TitleGroup(REF)] [ShowInInspector]public Canvas Canvas {get => canvas;}
+    [TitleGroup(REF)] Canvas canvas;
 
-    private void Start()
+    private void Awake()
     {
         lastScreenWidth = Screen.width;
         lastScreenHeight = Screen.height;
@@ -46,10 +52,11 @@ public class UIManager : SingletonObject<UIManager>
         panelTool = GameObject.FindObjectOfType<PanelTool>();
         window2D = GameObject.FindObjectOfType<Window2D>();
         window3D = GameObject.FindObjectOfType<Window3D>();
+        canvas = GameObject.FindObjectOfType<Canvas>();
 
-        if (panelProperty == null || panelTool == null || window2D == null || window3D == null)
-        { 
-            
+        if (panelProperty == null || panelTool == null || window2D == null || window3D == null || canvas == null)
+        {
+            Debug.LogError("UI manager couldnt find all required References");
         }
     }
 
@@ -73,6 +80,8 @@ public class UIManager : SingletonObject<UIManager>
         if (lastScreenWidth != Screen.width || lastScreenHeight != Screen.height) // if screenSizeChanged do this:
         {
             window3D.UpdateViewQuad();
+            panelTool.UpdateSize();
+            panelProperty.UpdateSize();
             lastScreenWidth = Screen.width;
             lastScreenHeight = Screen.height;
         }
