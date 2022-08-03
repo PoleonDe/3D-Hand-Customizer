@@ -8,7 +8,20 @@ public class Quad2D
     public Mesh Mesh2D { get => mesh2D; }
     public float Width { get => Mathf.Abs(bottomRight.x - topLeft.x); }
     public float Height { get => Mathf.Abs(bottomRight.y - topLeft.y); }
-    public Vector2 AspectRatio { get => new Vector2(1f, Height / Width); }
+    public Vector2 AspectRatio 
+    { 
+        get 
+        {
+            if (Width > Height)
+            {
+                return new Vector2(1f, Height / Width);
+            }
+            else
+            {
+                return new Vector2(Width/Height,1f);
+            }
+        } 
+    }
 
     Vector3 topLeft; // Top Left
     public Vector3 TopLeft { get => topLeft; }

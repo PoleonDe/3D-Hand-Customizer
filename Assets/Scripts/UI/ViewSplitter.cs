@@ -54,11 +54,23 @@ public class ViewSplitter : ViewQuad
         //throw new System.NotImplementedException();
     }
 
-    public void SetPosition(Vector3 _pos)
+    public void SetPosition(Vector3 _worldPos)
     {
         Debug.Log("moved View Splitter");
-        //TODO implement min/max 
-        this.transform.position = new Vector3(_pos.x, 0f, sortingDepth);
+
+        float minX = GameController.Instance.CameraUI.ScreenToWorldPoint(new Vector3(0f, 0f, 0f)).x;
+        float maxX = GameController.Instance.CameraUI.ScreenToWorldPoint(new Vector3(UIManager.Instance.Canvas.pixelRect.width,0f,0f)).x;
+
+        if (UIManager.Instance.IsPanelTool) // if PanelTool is Active clamp to Tool Panel
+        {
+            minX = GameController.Instance.CameraUI.ScreenToWorldPoint(new Vector3(UIManager.Instance.PanelTool.WidthPixel, 0f, 0f)).x;
+        }
+        if (UIManager.Instance.IsPanelProperty)// if PanelTool is Active clamp to Property Panel
+        {
+            maxX = GameController.Instance.CameraUI.ScreenToWorldPoint(new Vector3(UIManager.Instance.Canvas.pixelRect.width - UIManager.Instance.PanelProperty.WidthPixel, 0f, 0f)).x;
+        }
+
+        this.transform.position = new Vector3(Mathf.Clamp(_worldPos.x,minX,maxX), 0f, sortingDepth);
 
         UIManager.Instance.NeedsRepaint = true;
     }

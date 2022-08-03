@@ -9,6 +9,7 @@ public class Window3D : ViewQuad
     const string REF = "References";
     const string IN = "Internal";
 
+    [TitleGroup(S)] public bool canNavigate = true;
     [TitleGroup(REF)] [ShowInInspector] Navigation navigation;
 
     new void Start()
@@ -21,27 +22,30 @@ public class Window3D : ViewQuad
 
     void Update()
     {
-        if (UIManager.Instance.isRayHit)
+        if(canNavigate)
         {
-            if (UIManager.Instance.rayHit.collider.gameObject == this.gameObject)
+            if (UIManager.Instance.isRayHit)
             {
-                //Debug.Log(UIManager.Instance.rayHit.textureCoord);
-                navigation.PropagateRaycast(UIManager.Instance.rayHit.textureCoord);
+                if (UIManager.Instance.rayHit.collider.gameObject == this.gameObject)
+                {
+                    //Debug.Log(UIManager.Instance.rayHit.textureCoord);
+                    navigation.PropagateRaycast(UIManager.Instance.rayHit.textureCoord);
 
-                if (Input.GetMouseButton(0))
-                {
-                    navigation.RotateCamera(UIManager.Instance.MouseDelta);
-                }
-                if (Input.GetMouseButton(1))
-                {
-                    navigation.ZoomCamera(UIManager.Instance.MouseDelta);
-                }
-                if (Input.GetMouseButton(2))
-                {
-                    navigation.PanCamera(UIManager.Instance.MouseDelta);
-                }
+                    if (Input.GetMouseButton(0))
+                    {
+                        navigation.RotateCamera(UIManager.Instance.MouseDelta);
+                    }
+                    if (Input.GetMouseButton(1))
+                    {
+                        navigation.ZoomCamera(UIManager.Instance.MouseDelta);
+                    }
+                    if (Input.GetMouseButton(2))
+                    {
+                        navigation.PanCamera(UIManager.Instance.MouseDelta);
+                    }
 
-                Debug.DrawRay(UIManager.Instance.rayHit.point, Vector3.up * 0.1f);
+                    Debug.DrawRay(UIManager.Instance.rayHit.point, Vector3.up * 0.1f);
+                }
             }
         }
     }

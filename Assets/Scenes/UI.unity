@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 628367830}
   - component: {fileID: 628367832}
   m_Layer: 5
-  m_Name: Panel2D
+  m_Name: Window2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1585,7 +1585,7 @@ GameObject:
   - component: {fileID: 1450533958}
   - component: {fileID: 1450533957}
   m_Layer: 5
-  m_Name: Panel3D
+  m_Name: Window3D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1637,6 +1637,7 @@ MonoBehaviour:
     SerializationNodes: []
   TL: {x: -1, y: 1}
   BR: {x: 1, y: -1}
+  canNavigate: 1
 --- !u!64 &1450533957
 MeshCollider:
   m_ObjectHideFlags: 0
