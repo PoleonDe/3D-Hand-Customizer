@@ -107,6 +107,7 @@ public class UIManager : SingletonObject<UIManager>
     public void Repaint()
     {
         window3D.UpdateViewQuad();
+        window2D.UpdateViewQuad();
         viewSplitter.UpdateViewQuad();
         panelTool.UpdateSize();
         panelProperty.UpdateSize();

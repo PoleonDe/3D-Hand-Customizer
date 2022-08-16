@@ -372,12 +372,13 @@ MonoBehaviour:
   canOrbit: 1
   canPan: 1
   canZoom: 0
+  invertPan: 1
   raycastMask:
     serializedVersion: 2
     m_Bits: 1
   panSpeed: 1
-  rotationSpeed: 15
-  zoomSpeed: 1
+  rotationSpeed: 45
+  zoomSpeed: 0.5
   cameraOrigin: {fileID: 0}
 --- !u!1 &1095879746
 GameObject:
@@ -389,7 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1095879747}
   m_Layer: 0
-  m_Name: SceneOrigin
+  m_Name: 3D_SceneOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

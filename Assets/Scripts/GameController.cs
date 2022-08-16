@@ -6,6 +6,7 @@ public class GameController : SingletonScriptableObject<GameController>
 {
     public Camera CameraUI;
     public Camera Camera3D;
+    public Camera Camera2D;
 
     private void Awake()
     {
@@ -37,6 +38,11 @@ public class GameController : SingletonScriptableObject<GameController>
         if (gO != null)
         {
             Camera3D = gO.GetComponent<Camera>();
+        }
+        gO = GameObject.FindGameObjectWithTag("2DCamera");
+        if (gO != null)
+        {
+            Camera2D = gO.GetComponent<Camera>();
         }
         gO = GameObject.FindGameObjectWithTag("UICamera");
         if (gO != null)

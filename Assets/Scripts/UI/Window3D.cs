@@ -10,12 +10,12 @@ public class Window3D : ViewQuad
     const string IN = "Internal";
 
     [TitleGroup(S)] public bool canNavigate = true;
-    [TitleGroup(REF)] [ShowInInspector] Navigation navigation;
+    [TitleGroup(REF)] [ShowInInspector] Navigation3D navigation;
 
     new void Start()
     {
         base.Start();
-        navigation = GameController.Instance.Camera3D.GetComponent<Navigation>();
+        navigation = GameController.Instance.Camera3D.GetComponent<Navigation3D>();
         Debug.Log("window3Dstart");
     }
        

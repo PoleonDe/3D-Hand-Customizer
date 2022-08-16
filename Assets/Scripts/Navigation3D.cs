@@ -4,7 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-public class Navigation : SerializedMonoBehaviour
+public class Navigation3D : SerializedMonoBehaviour
 {
     const string S = "Settings";
     const string IN = "Internal";
@@ -13,6 +13,7 @@ public class Navigation : SerializedMonoBehaviour
     [TitleGroup(S)] public bool canOrbit = true;
     [TitleGroup(S)] public bool canPan = true;
     [TitleGroup(S)] public bool canZoom = true;
+    [TitleGroup(S)] public bool invertPan = true;
 
     [TitleGroup(S)] [SerializeField] public LayerMask raycastMask;
 
@@ -59,13 +60,17 @@ public class Navigation : SerializedMonoBehaviour
     {
         if (canPan)
         {
+            if (invertPan)
+            {
+                _delta = new Vector2(_delta.x * -1f, _delta.y * -1f);
+            }
             cameraOrigin.transform.Translate(new Vector3(_delta.x * PanSpeed, _delta.y * PanSpeed * Vector3.Distance(cameraOrigin.transform.position, this.transform.position), 0f), Space.Self);
         }
     }
     public void RotateCamera(Vector2 _delta)
     {
         if (canOrbit)
-        { 
+        {
             cameraOrigin.transform.RotateAround(cameraOrigin.transform.position, cameraOrigin.transform.right, -_delta.y * RotationSpeed);
             cameraOrigin.transform.RotateAround(cameraOrigin.transform.position, Vector3.up, _delta.x * RotationSpeed);
         }
